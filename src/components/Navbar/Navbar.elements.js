@@ -4,7 +4,7 @@ import { FaMagento } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 export const Nav = styled.nav`
-    background: #101522;
+    background: #ffffff;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -68,11 +68,12 @@ export const NavMenu = styled.ul`
         top: 80px;
         opacity: 1;
         transition: all 0.5s ease;
-        background-color: #101522;
+        background-color: #ffffff;
         left: ${({ click }) => (click ? 0 : '-100%')};
     }
 `
 export const NavItem = styled.li`
+    background: #ffffff;
     height: 80px;
     border-bottom: 2px solid transparent;
     border-radius: 2px;
@@ -92,7 +93,7 @@ export const NavItem = styled.li`
 `
 
 export const NavLinks = styled(Link)`
-    color: #fff;
+    color: #000000;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -107,14 +108,15 @@ export const NavLinks = styled(Link)`
         display: table;
 
         &:hover {
-            color: #4b59f7;
+            color: #EFCB2C;
             transition: all 0.3s ease;
         }
     }
 `
 
 export const NavItemBtn = styled.li`
-  @media screen and (max-width: 960px) {
+    background: #ffffff;
+    @media screen and (max-width: 960px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,6 +126,7 @@ export const NavItemBtn = styled.li`
 `;
 
 export const NavBtnLink = styled(Link)`
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,17 +1,17 @@
 export const homeObjOne = {
     primary: true,
-    lightBg: false,
+    lightBg: true,
     lightTopLine: true,
     lightText: true,
     lightTextDesc: true,
-    topLine: 'Marketing Agency',
-    headline: 'Lead Generation Specialist for Online Businesses',
+    // topLine: 'viacol.co',
+    headline: 'Movilidad con inteligencia',
     description:
-      'We help business owners increase their revenue. Our team of unique specialist can help you achieve your business goals.',
-    buttonLabel: 'Get Started',
+      'Tenga en cuenta: Para realizar el curso pedagógico, debe estar inscrito y activo en el Registro Único Nacional de Tránsito (RUNT).',
+    buttonLabel: 'Contáctanos',
     imgStart: '',
-    img: require('../../images/svg-1.svg'),
-    alt: 'Credit Card',
+    img: require('../../images/png/viacol-logo.png'),
+    alt: 'logo',
     start: ''
   };
   
@@ -27,7 +27,7 @@ export const homeObjOne = {
       "Once you've joined, our team of specialist will reach out to you and get you set up in minutes.",
     buttonLabel: 'Learn More',
     imgStart: '',
-    img: require('../../images/svg-2.svg'),
+    img: require('../../images/svg/svg-2.svg'),
     alt: 'Vault',
     start: ''
   };
@@ -45,7 +45,7 @@ export const homeObjOne = {
       "Their team is wonderful! I can't believe I didn't start working with them earlier.",
     buttonLabel: 'View Case Study',
     imgStart: 'start',
-    img: require('../../images/profile.jpg'),
+    img: require('../../images/jpg/profile.jpg'),
     alt: 'Vault',
     start: 'true'
   };
@@ -62,7 +62,7 @@ export const homeObjOne = {
       'You will never have to worry about your information getting leaked. Our team of security experts will ensure your records are kept safe.',
     buttonLabel: 'Sign Up Now',
     imgStart: 'start',
-    img: require('../../images/svg-3.svg'),
+    img: require('../../images/svg/svg-3.svg'),
     alt: 'Vault',
     start: 'true'
   };
