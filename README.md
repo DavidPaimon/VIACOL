@@ -45,7 +45,7 @@ git clone https://github.com/DavidPaimon/VIACOL.git
 2. Go into project
 
 ```bash
-cd shadcn-landing-page
+cd VIACOL
 ```
 
 3. Install dependencies
