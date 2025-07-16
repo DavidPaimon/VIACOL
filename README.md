@@ -8,6 +8,8 @@ Build your React landing page effortlessly with the required sections to your pr
 
 ## Sections
 
+- [x] Landing
+- [x] Login
 - [x] Navbar
 - [x] Sidebar(mobile)
 - [x] Hero
