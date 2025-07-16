@@ -28,8 +28,8 @@ export const HeroCards = () => {
           </Avatar>
 
           <div className="flex flex-col">
-            <CardTitle className="text-lg">John Doe React</CardTitle>
-            <CardDescription>@john_doe</CardDescription>
+            <CardTitle className="text-lg">Misión y visión</CardTitle>
+            <CardDescription>Viacol</CardDescription>
           </div>
         </CardHeader>
 
@@ -44,16 +44,18 @@ export const HeroCards = () => {
             alt="user avatar"
             className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
           />
-          <CardTitle className="text-center">Leo Miranda</CardTitle>
-          <CardDescription className="font-normal text-primary">
-            Frontend Developer
+          <CardTitle className="text-center">Código de ética y comportamiento organizacional</CardTitle>
+          <CardDescription className="font-normal text-[#F2C92F]">
+            CIA Viacol S.A.S.
           </CardDescription>
         </CardHeader>
 
         <CardContent className="text-center pb-2">
           <p>
-            I really enjoy transforming ideas into functional software that
-            exceeds expectations
+            1. Propósito del Código
+            2. Compromisos Éticos del Personal
+            3. Aplicabilidad y Alcance
+            4. Mecanismos de Seguimiento y Evaluación
           </p>
         </CardContent>
 
@@ -115,7 +117,7 @@ export const HeroCards = () => {
             Free
             <Badge
               variant="secondary"
-              className="text-sm text-primary"
+              className="text-sm text-[#F2C92F]"
             >
               Most popular
             </Badge>
@@ -144,7 +146,7 @@ export const HeroCards = () => {
                   key={benefit}
                   className="flex"
                 >
-                  <Check className="text-green-500" />{" "}
+                  <Check className="text-[#F2C92F]" />{" "}
                   <h3 className="ml-2">{benefit}</h3>
                 </span>
               )
@@ -156,12 +158,12 @@ export const HeroCards = () => {
       {/* Service */}
       <Card className="absolute w-[350px] -right-[10px] bottom-[35px]  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
-          <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
+          <div className="mt-1 bg-[#F2C92F]/60 p-1 rounded-2xl">
             <LightBulbIcon />
           </div>
           <div>
-            <CardTitle>Light & dark mode</CardTitle>
-            <CardDescription className="text-md mt-2">
+            <CardTitle>Enfoque estratégico</CardTitle>
+            <CardDescription className="text-md">
               Lorem ipsum dolor sit amet consect adipisicing elit. Consectetur
               natusm.
             </CardDescription>

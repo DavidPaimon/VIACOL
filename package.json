@@ -1,10 +1,10 @@
 {
-  "name": "shadcn-landing-page-template",
+  "name": "shadcn-landing-page-viacol",
   "description": "Landing page template utilizing Shadcn, React, Typescript, and Tailwind CSS for rapid development and responsive design.",
   "author": {
-    "name": "Leopoldo Miranda",
-    "email": "leomirandadev@gmail.com",
-    "url": "https://github.com/leoMirandaa"
+    "name": "David Felipe Florido Jiménez",
+    "email": "davidfelipe.fj@gmail.com",
+    "url": "https://github.com/DavidPaimon"
   },
   "license": "MIT",
   "keywords": [
@@ -39,6 +39,9 @@
     "lucide-react": "^0.424.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.6.3",
+    "react-simple-typewriter": "^5.0.1",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
