@@ -84,9 +84,9 @@ export const Footer = () => {
           </button>
           {openSection === "legal" && (
             <ul className="mt-2 pl-4 flex flex-col gap-2">
-              <li><a href="#">Términos y condiciones</a></li>
-              <li><a href="#">Politicas de privacidad</a></li>
-              <li><a href="#">Términos de uso</a></li>
+              <li><a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">Términos y condiciones</a></li>
+              <li><a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Politicas de privacidad</a></li>
+              <li><a href="/terms-of-use" target="_blank" rel="noopener noreferrer">Términos de uso</a></li>
             </ul>
           )}
         </div>
