@@ -18,6 +18,8 @@ import ViacolLanding from "./components/Landing";
 import CorporateValues from "./components/CorporateValues";
 import CodesOfEthics from "./components/CodesOfEthics";
 import { QualityObjectives } from "./components/QualityObjectives";
+import Privacypolicy from "./components/PrivacyPolicy";
+import Termsofuse from "./components/TermsOfUse";
 import Login from "./components/Login";
 import Terms from "./components/Terms"; // ⬅️ nueva importación
 import { useAuth } from "./lib/auth-context";
@@ -57,6 +59,8 @@ function App() {
       <Route path="/" element={<ViacolLanding />} />
       <Route path="/login" element={<Login />} />
       <Route path="/terms-and-conditions" element={<Terms />} /> //Despues del Login, determiné esta ruta como la única ruta publica, esto debido a que el proyecto es meramente front con practicamente nada de seguridad.
+      <Route path="/privacy-policy" element={<Privacypolicy />} />
+      <Route path="/terms-of-use" element={<Termsofuse />} />
       <Route path="/quality-objectives" element={<QualityObjectives />} />
       <Route
         path="/home"

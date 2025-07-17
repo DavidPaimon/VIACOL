@@ -25,10 +25,12 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   { href: "/corporate-values", label: "Nuestros valores" },
-  { href: "#testimonials", label: "Reglamento interno" },
+  {
+    href: "/SG-SST-DIR-02%20REGLAMENTO%20INTERNO%20DE%20TRABAJO.pdf",
+    label: "Reglamento interno de trabajo",
+  },
   { href: "/codes-of-ethics", label: "Nuestros códigos de ética" },
-  { href: "/quality-objectives", label: "Cuadro de Objetivos de Calidad" },
-
+  { href: "/quality-objectives", label: "Objetivos de Calidad" },
 ];
 
 export const Navbar = () => {
@@ -37,12 +39,12 @@ export const Navbar = () => {
   const location = useLocation();
 
   const handleNavigate = (href: string) => {
-    if (href.startsWith("/")) {
-      // navegación a otra ruta
-      if (location.pathname === href) return; // si ya estás ahí, no hagas nada
+    if (href.endsWith(".pdf")) {
+      window.open(href, "_blank");
+    } else if (href.startsWith("/")) {
+      if (location.pathname === href) return;
       navigate(href);
     } else {
-      // navegación interna dentro de la misma página
       window.location.hash = href;
     }
     setIsOpen(false);
@@ -60,8 +62,10 @@ export const Navbar = () => {
     <header className="sticky top-0 z-40 w-full bg-[#F2C92F] text-black">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-20 px-4 w-screen flex justify-between items-center">
-          {/* Logo */}
-          <NavigationMenuItem className="flex items-center cursor-pointer" onClick={handleLogoClick}>
+          <NavigationMenuItem
+            className="flex items-center cursor-pointer"
+            onClick={handleLogoClick}
+          >
             <img
               src={logo}
               alt="VIACOL Logo"
