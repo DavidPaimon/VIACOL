@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -60,7 +61,9 @@ export const HeroCards = () => {
         </CardContent>
 
         <CardFooter className="w-full flex justify-center">
-          <Button className="w-full max-w-[200px]">Visualizar códigos</Button>
+          <Link to="/codes-of-ethics" className="w-full max-w-[200px]">
+            <Button className="w-full">Visualizar códigos</Button>
+          </Link>
         </CardFooter>
       </Card>
 
@@ -77,8 +80,11 @@ export const HeroCards = () => {
         </CardHeader>
 
         <CardContent>
-          <Button className="w-full -mb-3 -mt-3">Ver listado de valores</Button>
+          <Link to="/corporate-values">
+            <Button className="w-full -mb-3 -mt-3">Ver listado de valores</Button>
+          </Link>
         </CardContent>
+
 
         <hr className="w-4/5 m-auto mb-1" />
 
@@ -89,7 +95,7 @@ export const HeroCards = () => {
               "Lealtad",
               "Confidencialidad",
               "Compromiso con la calidad",
-              "Responsabilidad",
+              "Responsabilidad social",
               "Integridad",
               "Vocación de servicio",
             ].map((benefit) => (

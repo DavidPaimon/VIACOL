@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,74 +12,83 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { FaEnvelope } from "react-icons/fa";
-
-import curvaDecorativa from "@/assets/svg/curva-decorativa.svg";
 import logo from "@/assets/png/viacol-logo.png";
 
 interface RouteProps {
-  href: string;
   label: string;
+  href: string;
 }
 
 const routeList: RouteProps[] = [
-  { href: "#features", label: "Nuestros valores" },
+  { href: "/corporate-values", label: "Nuestros valores" },
   { href: "#testimonials", label: "Reglamento interno" },
-  { href: "#pricing", label: "Nuestros códigos de ética" },
-  { href: "#faq", label: "Cuadro de lo que sea eso" },
+  { href: "/codes-of-ethics", label: "Nuestros códigos de ética" },
+  { href: "/quality-objectives", label: "Cuadro de Objetivos de Calidad" },
+
 ];
 
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigate = (href: string) => {
+    if (href.startsWith("/")) {
+      // navegación a otra ruta
+      if (location.pathname === href) return; // si ya estás ahí, no hagas nada
+      navigate(href);
+    } else {
+      // navegación interna dentro de la misma página
+      window.location.hash = href;
+    }
+    setIsOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname === "/home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/home", { replace: true });
+    }
+  };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white border-b dark:border-b-slate-700 dark:bg-background overflow-hidden">
-      {/* SVG decorativo como fondo del navbar */}
-      <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-90">
-        <img
-          src={curvaDecorativa}
-          alt="Decoración"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
+    <header className="sticky top-0 z-40 w-full bg-[#F2C92F] text-black">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-20 px-4 w-screen flex justify-between items-center">
-          {/* Logo de VIACOL */}
-          <NavigationMenuItem className="flex items-center">
-            <a href="/home" className="flex items-center">
-              <img
-                src={logo}
-                alt="VIACOL Logo"
-                className="h-14 w-auto object-contain"
-              />
-            </a>
+          {/* Logo */}
+          <NavigationMenuItem className="flex items-center cursor-pointer" onClick={handleLogoClick}>
+            <img
+              src={logo}
+              alt="VIACOL Logo"
+              className="h-14 w-auto object-contain"
+            />
           </NavigationMenuItem>
 
-          {/* Enlaces desktop */}
+          {/* Links desktop */}
           <nav className="hidden md:flex gap-2">
             {routeList.map((route) => (
-              <a
+              <button
                 key={route.label}
-                href={route.href}
-                className={`text-[17px] ${buttonVariants({
-                  variant: "ghost",
-                })}`}
+                onClick={() => handleNavigate(route.href)}
+                className={`text-[17px] ${buttonVariants({ variant: "ghost" })}`}
               >
                 {route.label}
-              </a>
+              </button>
             ))}
           </nav>
 
-          {/* Acciones (escritorio) */}
+          {/* Acciones escritorio */}
           <div className="hidden md:flex gap-2 items-center">
             <a
               href="#contacto"
-              className={`border ${buttonVariants({ variant: "secondary" })}`}
+              className={`border border-black ${buttonVariants({
+                variant: "secondary",
+              })}`}
             >
               <FaEnvelope className="mr-2 mt-0.5" />
               Contáctanos
@@ -86,41 +96,38 @@ export const Navbar = () => {
             <ModeToggle />
           </div>
 
-          {/* Mobile: iconos y menú hamburguesa */}
-          <span className="flex md:hidden items-center">
+          {/* Mobile */}
+          <span className="flex md:hidden items-center gap-2">
             <ModeToggle />
-
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger className="px-2">
-                <Menu
-                  className="flex md:hidden h-5 w-5"
-                  onClick={() => setIsOpen(true)}
-                />
+              <SheetTrigger className="p-2 rounded-md">
+                <Menu className="h-5 w-5 text-black" />
               </SheetTrigger>
-
-              <SheetContent side="left">
+              <SheetContent side="left" className="bg-[#F2C92F] text-black">
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl py-2">
-                    VIACOL
+                  <SheetTitle className="py-4">
+                    <img
+                      src={logo}
+                      alt="VIACOL Logo"
+                      className="h-14 w-auto mx-auto object-contain"
+                      onClick={handleLogoClick}
+                    />
                   </SheetTitle>
                 </SheetHeader>
-
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {routeList.map(({ href, label }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      onClick={() => setIsOpen(false)}
+                  {routeList.map((route) => (
+                    <button
+                      key={route.label}
+                      onClick={() => handleNavigate(route.href)}
                       className={buttonVariants({ variant: "ghost" })}
                     >
-                      {label}
-                    </a>
+                      {route.label}
+                    </button>
                   ))}
-
                   <a
                     href="#contacto"
                     onClick={() => setIsOpen(false)}
-                    className={`w-[150px] border ${buttonVariants({
+                    className={`w-[150px] border border-black ${buttonVariants({
                       variant: "secondary",
                     })}`}
                   >
