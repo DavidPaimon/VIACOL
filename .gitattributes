@@ -1,0 +1,13 @@
+# Fuerza a usar saltos de línea LF para TypeScript
+*.ts text eol=lf
+*.tsx text eol=lf
+
+# Para otros archivos de texto comunes
+*.js text eol=lf
+*.jsx text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+
+# Configuración por defecto (opcional)
+* text=auto
