@@ -26,10 +26,10 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-  { href: "#features", label: "Features" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#features", label: "Nuestros valores" },
+  { href: "#testimonials", label: "Reglamento interno" },
+  { href: "#pricing", label: "Nuestros códigos de ética" },
+  { href: "#faq", label: "Cuadro de lo que sea eso" },
 ];
 
 export const Navbar = () => {
@@ -80,7 +80,7 @@ export const Navbar = () => {
               href="#contacto"
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             >
-              <FaEnvelope className="mr-2" />
+              <FaEnvelope className="mr-2 mt-0.5" />
               Contáctanos
             </a>
             <ModeToggle />
@@ -124,7 +124,7 @@ export const Navbar = () => {
                       variant: "secondary",
                     })}`}
                   >
-                    <FaEnvelope className="mr-2" />
+                    <FaEnvelope className="mr-2 mt-0.5" />
                     Contáctanos
                   </a>
                 </nav>

@@ -1,6 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Badge } from "./ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -8,43 +6,45 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-} from "@/components/ui/card";
-import { Check, Linkedin } from "lucide-react";
-import { LightBulbIcon } from "./Icons";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
+} from "@/components/ui/card"
+import { Check } from "lucide-react"
+import { LightBulbIcon } from "./Icons"
+// import { GitHubLogoIcon } from "@radix-ui/react-icons"
+import viacolLogo from "@/assets/png/viacol-logo.png"
+import { MissionVisionModal } from "@/components/modals/MissionVisionModal"
+import { StrategicFocusModal } from "@/components/modals/StrategicFocusModal"
 
 export const HeroCards = () => {
   return (
-    <div className="hidden lg:flex flex-row flex-wrap gap-8 relative w-[700px] h-[500px]">
-      {/* Testimonial */}
-      <Card className="absolute w-[340px] -top-[15px] drop-shadow-xl shadow-black/10 dark:shadow-white/10">
-        <CardHeader className="flex flex-row items-center gap-4 pb-2">
-          <Avatar>
-            <AvatarImage
-              alt=""
-              src="https://github.com/shadcn.png"
-            />
-            <AvatarFallback>SH</AvatarFallback>
-          </Avatar>
+    <div className="relative flex flex-col gap-6 items-center lg:block lg:w-[700px] lg:h-[500px]">
+      {/* Misión y Visión */}
+      <MissionVisionModal
+        trigger={
+          <Card className="w-[90%] max-w-[340px] lg:absolute lg:w-[340px] lg:-top-[32px] lg:right-[325px] drop-shadow-xl shadow-black/10 dark:shadow-white/10 cursor-pointer hover:scale-[1.02] transition-transform duration-200">
+            <CardHeader className="flex flex-row items-center gap-4 pb-2">
+              <img
+                src={viacolLogo}
+                alt="Logo Viacol"
+                className="w-12 h-12 object-contain"
+              />
+              <div className="flex flex-col">
+                <CardTitle className="text-lg">Misión y visión</CardTitle>
+                <CardDescription>VIACOL S.A.S.</CardDescription>
+              </div>
+            </CardHeader>
+            <CardContent className="text-sm leading-snug">
+              Formamos ciudadanos responsables, comprometidos con la movilidad segura.
+            </CardContent>
+          </Card>
+        }
+      />
 
-          <div className="flex flex-col">
-            <CardTitle className="text-lg">Misión y visión</CardTitle>
-            <CardDescription>Viacol</CardDescription>
-          </div>
-        </CardHeader>
-
-        <CardContent>This landing page is awesome!</CardContent>
-      </Card>
-
-      {/* Team */}
-      <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
-        <CardHeader className="mt-8 flex justify-center items-center pb-2">
-          <img
-            src="https://i.pravatar.cc/150?img=58"
-            alt="user avatar"
-            className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
-          />
-          <CardTitle className="text-center">Código de ética y comportamiento organizacional</CardTitle>
+      {/* Código de ética */}
+      <Card className="w-[90%] max-w-[320px] lg:absolute lg:right-[20px] lg:-top-[8px] flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+        <CardHeader className="mt-2 flex justify-center items-center pb-2">
+          <CardTitle className="text-center">
+            Código de ética y comportamiento organizacional
+          </CardTitle>
           <CardDescription className="font-normal text-[#F2C92F]">
             CIA Viacol S.A.S.
           </CardDescription>
@@ -52,124 +52,74 @@ export const HeroCards = () => {
 
         <CardContent className="text-center pb-2">
           <p>
-            1. Propósito del Código
-            2. Compromisos Éticos del Personal
-            3. Aplicabilidad y Alcance
+            1. Propósito del Código<br />
+            2. Compromisos Éticos del Personal<br />
+            3. Aplicabilidad y Alcance<br />
             4. Mecanismos de Seguimiento y Evaluación
           </p>
         </CardContent>
 
-        <CardFooter>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa"
-              target="_blank"
-              className={buttonVariants({
-                variant: "ghost",
-                size: "sm",
-              })}
-            >
-              <span className="sr-only">Github icon</span>
-              <GitHubLogoIcon className="w-5 h-5" />
-            </a>
-            <a
-              rel="noreferrer noopener"
-              href="https://twitter.com/leo_mirand4"
-              target="_blank"
-              className={buttonVariants({
-                variant: "ghost",
-                size: "sm",
-              })}
-            >
-              <span className="sr-only">X icon</span>
-              <svg
-                role="img"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="fill-foreground w-5 h-5"
-              >
-                <title>X</title>
-                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
-              </svg>
-            </a>
-
-            <a
-              rel="noreferrer noopener"
-              href="https://www.linkedin.com/in/leopoldo-miranda/"
-              target="_blank"
-              className={buttonVariants({
-                variant: "ghost",
-                size: "sm",
-              })}
-            >
-              <span className="sr-only">Linkedin icon</span>
-              <Linkedin size="20" />
-            </a>
-          </div>
+        <CardFooter className="w-full flex justify-center">
+          <Button className="w-full max-w-[200px]">Visualizar códigos</Button>
         </CardFooter>
       </Card>
 
-      {/* Pricing */}
-      <Card className="absolute top-[150px] left-[50px] w-72  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+
+      {/* Valores corporativos */}
+      <Card className="w-[90%] max-w-[320px] lg:absolute lg:top-[128px] lg:left-[50px] drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader>
           <CardTitle className="flex item-center justify-between">
-            Free
-            <Badge
-              variant="secondary"
-              className="text-sm text-[#F2C92F]"
-            >
-              Most popular
-            </Badge>
+            Valores corporativos
           </CardTitle>
-          <div>
-            <span className="text-3xl font-bold">$0</span>
-            <span className="text-muted-foreground"> /month</span>
-          </div>
-
           <CardDescription>
-            Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.
+            Promovemos una cultura basada en la inteligencia para construir una movilidad más consciente.
           </CardDescription>
         </CardHeader>
 
         <CardContent>
-          <Button className="w-full">Start Free Trial</Button>
+          <Button className="w-full -mb-3 -mt-3">Ver listado de valores</Button>
         </CardContent>
 
-        <hr className="w-4/5 m-auto mb-4" />
+        <hr className="w-4/5 m-auto mb-1" />
 
         <CardFooter className="flex">
-          <div className="space-y-4">
-            {["4 Team member", "4 GB Storage", "Upto 6 pages"].map(
-              (benefit: string) => (
-                <span
-                  key={benefit}
-                  className="flex"
-                >
-                  <Check className="text-[#F2C92F]" />{" "}
-                  <h3 className="ml-2">{benefit}</h3>
-                </span>
-              )
-            )}
+          <div className="space-y-1">
+            {[
+              "Respeto",
+              "Lealtad",
+              "Confidencialidad",
+              "Compromiso con la calidad",
+              "Responsabilidad",
+              "Integridad",
+              "Vocación de servicio",
+            ].map((benefit) => (
+              <span key={benefit} className="flex">
+                <Check className="text-[#F2C92F]" />
+                <h3 className="ml-2">{benefit}</h3>
+              </span>
+            ))}
           </div>
         </CardFooter>
       </Card>
 
-      {/* Service */}
-      <Card className="absolute w-[350px] -right-[10px] bottom-[35px]  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
-        <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
-          <div className="mt-1 bg-[#F2C92F]/60 p-1 rounded-2xl">
-            <LightBulbIcon />
-          </div>
-          <div>
-            <CardTitle>Enfoque estratégico</CardTitle>
-            <CardDescription className="text-md">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Consectetur
-              natusm.
-            </CardDescription>
-          </div>
-        </CardHeader>
-      </Card>
+      {/* Enfoque estratégico con modal */}
+      <StrategicFocusModal
+        trigger={
+          <Card className="w-[90%] max-w-[340px] lg:absolute lg:-right-[1px] lg:bottom-[3px] drop-shadow-xl shadow-black/10 dark:shadow-white/10 cursor-pointer hover:scale-[1.02] transition-transform duration-200">
+            <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
+              <div className="mt-1 bg-[#F2C92F]/60 p-1 rounded-2xl">
+                <LightBulbIcon />
+              </div>
+              <div>
+                <CardTitle className="-mt-3 text-md">Enfoque estratégico y política de calidad</CardTitle>
+                <CardDescription className="text-sm mt-3">
+                  Promovemos una formación vial consciente en la transformación ciudadana.
+                </CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+        }
+      />
     </div>
-  );
-};
+  )
+}
