@@ -24,8 +24,8 @@ const InstitutionalHeader: React.FC = () => {
           <img src={logo} alt="VIACOL Logo" className="h-20 w-auto" />
         </div>
 
-        {/* Logos de entidades */}
-        <div className="flex flex-col md:flex-row items-center md:items-end gap-2 text-right">
+        {/* Logos de entidades: visibles solo en md y superior */}
+        <div className="hidden md:flex flex-col md:flex-row items-center md:items-end gap-2 text-right">
           <span className="text-sm font-semibold text-gray-700 mb-1 md:mb-0">
             Avalados y vigilados por:
           </span>
