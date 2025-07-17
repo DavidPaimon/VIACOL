@@ -11,7 +11,6 @@ export default function CorporateValues() {
     <>
       <Navbar />
       <main className="container px-4 py-10 space-y-8 max-w-5xl mx-auto">
-        {/* Botón Volver */}
         <button
         onClick={() => navigate(-1)}
         className="flex items-center text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition font-medium"
@@ -46,7 +45,6 @@ export default function CorporateValues() {
   );
 }
 
-// ✅ Lista de valores
 const values = [
   {
     title: "Respeto",

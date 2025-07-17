@@ -1,17 +1,13 @@
 import { useNavigate } from "react-router-dom"
 import { ArrowLeft } from "lucide-react"
 import { Navbar } from "./Navbar"
-// import { cn } from "@/lib/utils"
 
 export default function CodesOfEthics() {
   const navigate = useNavigate()
 
   return (
     <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-      {/* Navbar */}
       <Navbar />
-
-      {/* Botón regresar visible y accesible */}
       <div className="px-4 sm:px-6 md:px-12 lg:px-36 mt-4 mb-6">
         <button
         onClick={() => navigate(-1)}
@@ -25,7 +21,6 @@ export default function CodesOfEthics() {
 
       {/* Contenido principal */}
       <section className="px-6 md:px-12 lg:px-36 py-10 space-y-10">
-        {/* Título */}
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-2">
             Código de Ética y Comportamiento Organizacional
@@ -33,7 +28,6 @@ export default function CodesOfEthics() {
           <p className="text-lg text-[#F2C92F] font-semibold">CIA Viacol S.A.S.</p>
         </div>
 
-        {/* Contenido dividido por secciones */}
         <div className="space-y-12">
           {/* 1. Propósito */}
           <Section title="1. Propósito del Código">
@@ -128,7 +122,6 @@ export default function CodesOfEthics() {
   )
 }
 
-// Componente de sección reutilizable
 function Section({
   title,
   children,

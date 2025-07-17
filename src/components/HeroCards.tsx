@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,13 +7,12 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-} from "@/components/ui/card"
-import { Check } from "lucide-react"
-import { LightBulbIcon } from "./Icons"
-// import { GitHubLogoIcon } from "@radix-ui/react-icons"
-import viacolLogo from "@/assets/png/viacol-logo.png"
-import { MissionVisionModal } from "@/components/modals/MissionVisionModal"
-import { StrategicFocusModal } from "@/components/modals/StrategicFocusModal"
+} from "@/components/ui/card";
+import { Check } from "lucide-react";
+import viacolLogo from "@/assets/png/viacol-logo.png";
+import logoViacol from "@/assets/png/logo-viacol.png";
+import { MissionVisionModal } from "@/components/modals/MissionVisionModal";
+import { StrategicFocusModal } from "@/components/modals/StrategicFocusModal";
 
 export const HeroCards = () => {
   return (
@@ -67,7 +66,6 @@ export const HeroCards = () => {
         </CardFooter>
       </Card>
 
-
       {/* Valores corporativos */}
       <Card className="w-[90%] max-w-[320px] lg:absolute lg:top-[128px] lg:left-[50px] drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader>
@@ -84,7 +82,6 @@ export const HeroCards = () => {
             <Button className="w-full -mb-3 -mt-3">Ver listado de valores</Button>
           </Link>
         </CardContent>
-
 
         <hr className="w-4/5 m-auto mb-1" />
 
@@ -108,16 +105,22 @@ export const HeroCards = () => {
         </CardFooter>
       </Card>
 
-      {/* Enfoque estratégico con modal */}
+      {/* Enfoque estratégico */}
       <StrategicFocusModal
         trigger={
           <Card className="w-[90%] max-w-[340px] lg:absolute lg:-right-[1px] lg:bottom-[3px] drop-shadow-xl shadow-black/10 dark:shadow-white/10 cursor-pointer hover:scale-[1.02] transition-transform duration-200">
             <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
-              <div className="mt-1 bg-[#F2C92F]/60 p-1 rounded-2xl">
-                <LightBulbIcon />
+              <div className="">
+                <img
+                  src={logoViacol}
+                  alt="Logo Viacol"
+                  className="w-25 h-25 object-contain"
+                />
               </div>
               <div>
-                <CardTitle className="-mt-3 text-md">Enfoque estratégico y política de calidad</CardTitle>
+                <CardTitle className="-mt-3 text-md">
+                  Enfoque estratégico y política de calidad
+                </CardTitle>
                 <CardDescription className="text-sm mt-3">
                   Promovemos una formación vial consciente en la transformación ciudadana.
                 </CardDescription>
@@ -127,5 +130,5 @@ export const HeroCards = () => {
         }
       />
     </div>
-  )
-}
+  );
+};

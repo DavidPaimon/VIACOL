@@ -81,7 +81,6 @@ const Login: React.FC = () => {
         onSubmit={handleSubmit}
         className="relative bg-white p-8 border rounded shadow-md w-full max-w-sm z-10"
       >
-        {/* Botón volver */}
         <button
           type="button"
           onClick={() => navigate(-1)}

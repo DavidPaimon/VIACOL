@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import { Navbar } from "@/components/Navbar"; // Asegúrate de que el path sea correcto
+import { Navbar } from "@/components/Navbar";
 import { Card } from "@/components/ui/card";
 
 export const QualityObjectives = () => {
