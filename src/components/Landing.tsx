@@ -6,6 +6,7 @@ import mintransporteLogo from "@/assets/png/mintransporte.png";
 import runtLogo from "@/assets/png/runt.png";
 import InstitutionalHeader from "@/components/ui/institutionalHeader";
 import AnimatedSlogan from "@/components/ui/animatedSlogan";
+import decorativoInferior from "@/assets/svg/decorativo-inferior.svg";
 
 const Landing: React.FC = () => {
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ const Landing: React.FC = () => {
       {/* SVG decorativo inferior */}
       <div className="absolute bottom-0 right-0 w-[250px] h-[200px] pointer-events-none select-none z-0">
         <img
-          src="/src/assets/svg/decorativo-inferior.svg"
+          src={decorativoInferior}
           alt="Decoración inferior"
           className="w-full h-full object-cover"
         />
