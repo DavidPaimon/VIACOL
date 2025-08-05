@@ -12,7 +12,6 @@ export const Footer = () => {
 
   return (
     <footer className="bg-[#F2C92F] text-black text-sm mt-10">
-      {/* Logo */}
       <div className="container py-6 flex justify-center xl:justify-start">
         <a href="/">
           <img src={viacolLogo} alt="Viacol logo" className="h-20 w-auto" />
@@ -85,9 +84,9 @@ export const Footer = () => {
           </button>
           {openSection === "legal" && (
             <ul className="mt-2 pl-4 flex flex-col gap-2">
-              <li><a href="#">Términos y condiciones</a></li>
-              <li><a href="#">Politicas de privacidad</a></li>
-              <li><a href="#">Términos de uso</a></li>
+              <li><a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">Términos y condiciones</a></li>
+              <li><a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Politicas de privacidad</a></li>
+              <li><a href="/terms-of-use" target="_blank" rel="noopener noreferrer">Términos de uso</a></li>
             </ul>
           )}
         </div>
@@ -127,16 +126,14 @@ export const Footer = () => {
 
         <div className="flex flex-col gap-2 items-end">
           <h3 className="font-bold text-base">Legal</h3>
-          <a href="#" className="opacity-90 hover:opacity-100">Términos y condiciones</a>
-          <a href="#" className="opacity-90 hover:opacity-100">Politicas de privacidad</a>
-          <a href="#" className="opacity-90 hover:opacity-100">Términos de uso</a>
+          <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100">Términos y condiciones</a>
+          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100">Politicas de privacidad</a>
+          <a href="/terms-of-use" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100">Términos de uso</a>
         </div>
       </div>
 
-      {/* Línea divisoria */}
       <hr className="border-black/20 w-11/12 mx-auto" />
 
-      {/* Footer base */}
       <section className="container text-center py-4 text-xs text-black">
         Copyright &copy; 2025 - {" "}
         <a

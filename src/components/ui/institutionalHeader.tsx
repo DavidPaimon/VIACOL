@@ -17,15 +17,12 @@ const InstitutionalHeader: React.FC = () => {
         />
       </div>
 
-      {/* Contenido */}
       <div className="w-full px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* Logo VIACOL */}
         <div className="flex items-center gap-4">
           <img src={logo} alt="VIACOL Logo" className="h-20 w-auto" />
         </div>
 
-        {/* Logos de entidades */}
-        <div className="flex flex-col md:flex-row items-center md:items-end gap-2 text-right">
+        <div className="hidden md:flex flex-col md:flex-row items-center md:items-end gap-2 text-right">
           <span className="text-sm font-semibold text-gray-700 mb-1 md:mb-0">
             Avalados y vigilados por:
           </span>

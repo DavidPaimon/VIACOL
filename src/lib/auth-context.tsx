@@ -9,14 +9,28 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// Lista de usuarios válidos
+const validUsers: { username: string; password: string }[] = [
+  { username: "admin", password: "AEIOU.12345" },
+  { username: "usuario", password: "claVe@12345" },
+  { username: "user", password: "uSEr20.25" },
+  { username: "viacol", password: "viaCoL@2025" },
+  { username: "superviacol", password: "sup3rs3GUro.2025@" },
+];
+
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const login = (username: string, password: string): boolean => {
-    if (username === "admin" && password === "1234aaaa") {
+    const userMatch = validUsers.find(
+      (user) => user.username === username && user.password === password
+    );
+
+    if (userMatch) {
       setIsAuthenticated(true);
       return true;
     }
+
     return false;
   };
 

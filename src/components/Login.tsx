@@ -5,7 +5,7 @@ import { isLoginFormValid } from "@/lib/form-validation";
 import logo from "@/assets/png/viacol-logo.png";
 import curvaSuperior from "@/assets/svg/curva-superior.svg";
 import curvaInferior from "@/assets/svg/curva-inferior.svg";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaArrowLeft } from "react-icons/fa";
 import { PiSignInFill } from "react-icons/pi";
 
 const MAX_ATTEMPTS = 5;
@@ -81,6 +81,14 @@ const Login: React.FC = () => {
         onSubmit={handleSubmit}
         className="relative bg-white p-8 border rounded shadow-md w-full max-w-sm z-10"
       >
+        <button
+          type="button"
+          onClick={() => navigate(-1)}
+          className="absolute top-4 left-4 text-gray-700 hover:text-black text-lg"
+        >
+          <FaArrowLeft />
+        </button>
+
         <div className="flex justify-center mb-6">
           <img src={logo} alt="VIACOL Logo" className="h-16 w-auto" />
         </div>
@@ -115,7 +123,6 @@ const Login: React.FC = () => {
           </span>
         </div>
 
-        {/* Checkbox de términos */}
         <div className="flex items-center justify-center mb-4">
           <input
             type="checkbox"
@@ -129,7 +136,6 @@ const Login: React.FC = () => {
           </label>
         </div>
 
-        {/* Botón de enviar */}
         <button
           type="submit"
           disabled={!isLoginFormValid(username, password, acceptTerms) || isBlocked}
@@ -144,7 +150,6 @@ const Login: React.FC = () => {
           <PiSignInFill className="ml-2 mt-1 text-lg" />
         </button>
 
-        {/* Enlace a términos */}
         <p className="text-sm text-center mt-4">
           <a
             href="/terms-and-conditions"
