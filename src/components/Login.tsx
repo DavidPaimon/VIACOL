@@ -13,6 +13,7 @@ const BLOCK_TIME_MS = 1 * 60 * 60 * 1000;
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
+  const [cedula, setCedula] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -38,6 +39,11 @@ const Login: React.FC = () => {
 
     if (isBlocked) {
       setError("Demasiados intentos fallidos. Acceso bloqueado por 1 hora. Contacte al soporte.");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(cedula)) {
+      setError("La cédula debe contener exactamente 10 números sin puntos ni espacios.");
       return;
     }
 
@@ -70,7 +76,6 @@ const Login: React.FC = () => {
         alt="Decoración superior"
         className="absolute top-0 right-0 w-1/2 max-w-[500px] z-0 opacity-90"
       />
-
       <img
         src={curvaInferior}
         alt="Decoración inferior"
@@ -95,10 +100,12 @@ const Login: React.FC = () => {
 
         {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
 
+        {/* Usuario */}
         <div className="mb-4">
           <label className="block mb-1 font-semibold text-black">Usuario</label>
           <input
             type="text"
+            placeholder="Ingrese el usuario proporcionado"
             className="w-full px-3 py-2 border rounded text-black"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -106,10 +113,26 @@ const Login: React.FC = () => {
           />
         </div>
 
+        {/* Cedula */}
+        <div className="mb-4">
+          <label className="block mb-1 font-semibold text-black">Cédula</label>
+          <input
+            type="text"
+            placeholder="Ingrese su cedula sin puntos ni espacios"
+            className="w-full px-3 py-2 border rounded text-black"
+            value={cedula}
+            onChange={(e) => setCedula(e.target.value.replace(/\D/g, ""))}
+            maxLength={10}
+            disabled={isBlocked}
+          />
+        </div>
+
+        {/* Contraseña */}
         <div className="mb-4 relative">
           <label className="block mb-1 font-semibold text-black">Contraseña</label>
           <input
             type={showPassword ? "text" : "password"}
+            placeholder="Ingrese la contraseña proporcionada"
             className="w-full px-3 py-2 border rounded pr-10 text-black"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -123,6 +146,7 @@ const Login: React.FC = () => {
           </span>
         </div>
 
+        {/* Términos */}
         <div className="flex items-center justify-center mb-4">
           <input
             type="checkbox"
@@ -136,12 +160,13 @@ const Login: React.FC = () => {
           </label>
         </div>
 
+        {/* Botón */}
         <button
           type="submit"
-          disabled={!isLoginFormValid(username, password, acceptTerms) || isBlocked}
+          disabled={!isLoginFormValid(username, cedula, password, acceptTerms) || isBlocked}
           className={`w-full flex items-center justify-center text-black font-semibold py-2 rounded transition duration-300 shadow-md
             ${
-              isBlocked || !isLoginFormValid(username, password, acceptTerms)
+              isBlocked || !isLoginFormValid(username, cedula, password, acceptTerms)
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-[#F2C92F] hover:bg-[#e0b922] hover:shadow-lg"
             }`}
