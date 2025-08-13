@@ -11,7 +11,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Lista de usuarios válidos
 const validUsers: { username: string; password: string }[] = [
-  { username: "admin", password: "AEIOU.12345" },
+  { username: "admin", password: "AEIOUU.123456" },
   { username: "usuario", password: "claVe@12345" },
   { username: "user", password: "uSEr20.25" },
   { username: "viacol", password: "viaCoL@2025" },
