@@ -11,11 +11,11 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Lista de usuarios válidos
 const validUsers: { username: string; password: string }[] = [
-  { username: "admin", password: "AEIOU.12345" },
-  { username: "usuario", password: "claVe@12345" },
-  { username: "user", password: "uSEr20.25" },
-  { username: "viacol", password: "viaCoL@2025" },
-  { username: "superviacol", password: "sup3rs3GUro.2025@" },
+  { username: "admin", password: "aeiou.1234" },
+  { username: "usuario", password: "clave@444" },
+  { username: "user", password: "user00.00" },
+  { username: "viacol", password: "viacoL@8888" },
+  { username: "superviacol", password: "sup3rs3GUro.4321@." },
 ];
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {

@@ -15,7 +15,7 @@ import {
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
-import { FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import logo from "@/assets/png/viacol-logo.png";
 
 interface RouteProps {
@@ -58,6 +58,9 @@ export const Navbar = () => {
     }
   };
 
+  // URL WhatsApp con número 3027824455
+  const whatsappUrl = `https://wa.me/573027824455?text=Hola%2C%20quiero%20comunicarme%20con%20CIA%20VIACOL%20S.A.S.`;
+
   return (
     <header className="sticky top-0 z-40 w-full bg-[#F2C92F] text-black">
       <NavigationMenu className="mx-auto">
@@ -89,12 +92,14 @@ export const Navbar = () => {
           {/* Acciones escritorio */}
           <div className="hidden md:flex gap-2 items-center">
             <a
-              href="#contacto"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`border border-black ${buttonVariants({
                 variant: "secondary",
               })}`}
             >
-              <FaEnvelope className="mr-2 mt-0.5" />
+              <FaWhatsapp className="mr-2 mt-0.5 text-green-600" />
               Contáctanos
             </a>
             <ModeToggle />
@@ -129,13 +134,15 @@ export const Navbar = () => {
                     </button>
                   ))}
                   <a
-                    href="#contacto"
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
                     className={`w-[150px] border border-black ${buttonVariants({
                       variant: "secondary",
                     })}`}
                   >
-                    <FaEnvelope className="mr-2 mt-0.5" />
+                    <FaWhatsapp className="mr-2 mt-0.5 text-green-600" />
                     Contáctanos
                   </a>
                 </nav>

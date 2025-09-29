@@ -1,7 +1,7 @@
 import { useState } from "react"
 import viacolLogo from "@/assets/png/viacol-logo.png"
 import { ChevronDown } from "lucide-react"
-import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6"
+import { FaFacebookF, FaInstagram, FaXTwitter, FaWhatsapp } from "react-icons/fa6"
 
 export const Footer = () => {
   const [openSection, setOpenSection] = useState<string | null>(null)
@@ -9,6 +9,11 @@ export const Footer = () => {
   const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section)
   }
+
+  // URL de Facebook
+  const facebookUrl = "https://www.facebook.com/share/16xAjYZPEj/?mibextid=wwXIfr"
+  // URL de WhatsApp
+  const whatsappUrl = "https://wa.me/573027824455?text=Hola%2C%20quiero%20comunicarme%20con%20CIA%20VIACOL%20S.A.S."
 
   return (
     <footer className="bg-[#F2C92F] text-black text-sm mt-10">
@@ -51,7 +56,16 @@ export const Footer = () => {
           {openSection === "platforms" && (
             <ul className="mt-2 pl-4 flex flex-col gap-2">
               <li><a href="#">Mapa del sitio</a></li>
-              <li><a href="#">Contáctanos</a></li>
+              <li>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <FaWhatsapp className="text-black" /> Contáctanos
+                </a>
+              </li>
             </ul>
           )}
         </div>
@@ -69,11 +83,16 @@ export const Footer = () => {
             <ul className="mt-2 pl-4 flex flex-col gap-2">
               <li className="flex items-center gap-2"><FaInstagram /> Instagram</li>
               <li className="flex items-center gap-2"><FaXTwitter /> X</li>
-              <li className="flex items-center gap-2"><FaFacebookF /> Facebook</li>
+              <li className="flex items-center gap-2">
+                <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <FaFacebookF /> Facebook
+                </a>
+              </li>
             </ul>
           )}
         </div>
 
+        {/* Legal */}
         <div>
           <button
             className="flex justify-between w-full font-bold"
@@ -107,7 +126,14 @@ export const Footer = () => {
         <div className="flex flex-col gap-2 items-end">
           <h3 className="font-bold text-base">¿Necesitas ayuda?</h3>
           <a href="#" className="opacity-90 hover:opacity-100">Mapa del sitio</a>
-          <a href="#" className="opacity-90 hover:opacity-100">Contáctanos</a>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 opacity-90 hover:opacity-100 justify-end"
+          >
+            <FaWhatsapp className="text-black" /> Contáctanos
+          </a>
         </div>
 
         {/* Redes sociales */}
@@ -119,11 +145,17 @@ export const Footer = () => {
           <a href="#" className="flex items-center gap-2 opacity-90 hover:opacity-100 justify-end">
             <FaXTwitter /> X
           </a>
-          <a href="#" className="flex items-center gap-2 opacity-90 hover:opacity-100 justify-end">
+          <a
+            href={facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 opacity-90 hover:opacity-100 justify-end"
+          >
             <FaFacebookF /> Facebook
           </a>
         </div>
 
+        {/* Legal */}
         <div className="flex flex-col gap-2 items-end">
           <h3 className="font-bold text-base">Legal</h3>
           <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100">Términos y condiciones</a>
@@ -142,7 +174,7 @@ export const Footer = () => {
           href="https://www.linkedin.com/in/davidflorido/"
           className="text-[#000] font-semibold border-black hover:border-b"
         >
-          Viacol
+          CIA VIACOL S.A.S.
         </a>
       </section>
     </footer>

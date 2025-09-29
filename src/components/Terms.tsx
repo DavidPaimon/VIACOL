@@ -34,7 +34,7 @@ const Terms: React.FC = () => {
         </h1>
 
         <p className="mb-4 text-justify leading-relaxed">
-          Bienvenido a VIACOL. Al acceder a nuestros servicios, usted acepta los siguientes términos y condiciones. Es importante que lea cuidadosamente esta información antes de utilizar nuestro sitio web o participar en cualquier programa ofrecido.
+          Bienvenido a CIA VIACOL S.A.S. Al acceder a nuestros servicios, usted acepta los siguientes términos y condiciones. Es importante que lea cuidadosamente esta información antes de utilizar nuestro sitio web o participar en cualquier programa ofrecido.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">1. Aceptación de términos</h2>
@@ -54,12 +54,12 @@ const Terms: React.FC = () => {
 
         <h2 className="text-xl font-semibold mt-6 mb-2">4. Propiedad intelectual</h2>
         <p className="mb-4 text-justify">
-          Todos los contenidos, marcas, logos y materiales presentes en este sitio son propiedad de VIACOL y están protegidos por las leyes de propiedad intelectual. Está prohibido reproducir o distribuir dichos contenidos sin autorización previa.
+          Todos los contenidos, marcas, logos y materiales presentes en este sitio son propiedad de CIA VIACOL S.A.S. y están protegidos por las leyes de propiedad intelectual. Está prohibido reproducir o distribuir dichos contenidos sin autorización previa.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">5. Cambios a los términos</h2>
         <p className="mb-4 text-justify">
-          VIACOL se reserva el derecho de modificar estos términos en cualquier momento. Las modificaciones serán comunicadas oportunamente a través de nuestros canales oficiales.
+          CIA VIACOL S.A.S. se reserva el derecho de modificar estos términos en cualquier momento. Las modificaciones serán comunicadas oportunamente a través de nuestros canales oficiales.
         </p>
 
         <p className="mt-8 text-sm text-center text-gray-500 dark:text-gray-400">
