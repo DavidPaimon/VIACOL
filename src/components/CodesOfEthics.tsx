@@ -25,14 +25,14 @@ export default function CodesOfEthics() {
           <h1 className="text-3xl font-bold mb-2">
             Código de Ética y Comportamiento Organizacional
           </h1>
-          <p className="text-lg text-[#F2C92F] font-semibold">CIA Viacol S.A.S.</p>
+          <p className="text-lg text-[#F2C92F] font-semibold">CIA VIACOL S.A.S.</p>
         </div>
 
         <div className="space-y-12">
           {/* 1. Propósito */}
           <Section title="1. Propósito del Código">
             Este Código de Ética establece los principios fundamentales que rigen el comportamiento
-            de todos los colaboradores de CIA Viacol S.A.S. Su finalidad es fortalecer la cultura
+            de todos los colaboradores de CIA VIACOL S.A.S. Su finalidad es fortalecer la cultura
             organizacional, fomentar la coherencia entre valores y acciones, y promover relaciones
             éticas con usuarios, autoridades y la sociedad en general.
           </Section>
@@ -50,7 +50,7 @@ export default function CodesOfEthics() {
               {
                 title: "b. Lealtad",
                 points: [
-                  "Ser fiel a la misión, visión y objetivos de CIA Viacol S.A.S.",
+                  "Ser fiel a la misión, visión y objetivos de CIA VIACOL S.A.S.",
                   "Abstenerse de actos que perjudiquen los intereses institucionales.",
                 ],
               },
@@ -103,7 +103,7 @@ export default function CodesOfEthics() {
 
           {/* 3. Aplicabilidad */}
           <Section title="3. Aplicabilidad y Alcance">
-            Este código aplica a todo el personal de CIA Viacol S.A.S., incluyendo directivos,
+            Este código aplica a todo el personal de CIA VIACOL S.A.S., incluyendo directivos,
             colaboradores, contratistas y aliados. Su cumplimiento es obligatorio y forma parte del
             desempeño laboral y del Sistema de Gestión de Calidad.
           </Section>

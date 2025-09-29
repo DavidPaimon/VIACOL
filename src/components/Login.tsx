@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/lib/auth-context";
-import { isLoginFormValid } from "@/lib/form-validation";
+import { isLoginFormValid, isCedulaValid } from "@/lib/form-validation";
 import logo from "@/assets/png/viacol-logo.png";
 import curvaSuperior from "@/assets/svg/curva-superior.svg";
 import curvaInferior from "@/assets/svg/curva-inferior.svg";
@@ -13,6 +13,8 @@ const BLOCK_TIME_MS = 1 * 60 * 60 * 1000;
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
+  const [cedula, setCedula] = useState("");
+  const [cedulaTouched, setCedulaTouched] = useState(false);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -41,6 +43,13 @@ const Login: React.FC = () => {
       return;
     }
 
+    // Validación de cédula
+    if (!isCedulaValid(cedula)) {
+      setCedulaTouched(true);
+      setError("La cédula debe tener entre 7 y 10 dígitos numéricos.");
+      return;
+    }
+
     const success = login(username, password);
 
     if (success) {
@@ -60,6 +69,40 @@ const Login: React.FC = () => {
         localStorage.setItem("attempts", newAttempts.toString());
         setError("Credenciales inválidas. Intente nuevamente.");
       }
+    }
+  };
+
+  // Sanitiza la entrada de cédula: solo dígitos y máximo 10
+  const handleCedulaChange = (value: string) => {
+    const digitsOnly = value.replace(/\D+/g, "").slice(0, 10);
+    setCedula(digitsOnly);
+  };
+
+  // Bloquea espacios y teclas no numéricas (dejando navegación/edición)
+  const handleCedulaKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const allowedKeys = [
+      "Backspace",
+      "Delete",
+      "ArrowLeft",
+      "ArrowRight",
+      "Tab",
+      "Home",
+      "End",
+    ];
+
+    if (allowedKeys.includes(e.key)) return;
+
+    if (e.key === " ") {
+      e.preventDefault();
+      return;
+    }
+
+    if ((e.ctrlKey || e.metaKey) && ["a", "c", "v", "x"].includes(e.key.toLowerCase())) {
+      return;
+    }
+
+    if (!/^[0-9]$/.test(e.key)) {
+      e.preventDefault();
     }
   };
 
@@ -90,7 +133,7 @@ const Login: React.FC = () => {
         </button>
 
         <div className="flex justify-center mb-6">
-          <img src={logo} alt="VIACOL Logo" className="h-16 w-auto" />
+          <img src={logo} alt="CIA VIACOL S.A.S. Logo" className="h-16 w-auto" />
         </div>
 
         {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
@@ -103,7 +146,42 @@ const Login: React.FC = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             disabled={isBlocked}
+            autoComplete="username"
           />
+        </div>
+
+        {/* CÉDULA */}
+        <div className="mb-4">
+          <label htmlFor="cedula" className="block mb-1 font-semibold text-black">
+            Cédula
+          </label>
+          <input
+            id="cedula"
+            name="cedula"
+            inputMode="numeric"
+            autoComplete="off"
+            className={`w-full px-3 py-2 border rounded text-black ${
+              cedulaTouched && !isCedulaValid(cedula) ? "border-red-500" : ""
+            }`}
+            value={cedula}
+            maxLength={10}
+            onChange={(e) => handleCedulaChange(e.target.value)}
+            onKeyDown={handleCedulaKeyDown}
+            onBlur={() => setCedulaTouched(true)}
+            disabled={isBlocked}
+            aria-invalid={cedulaTouched && !isCedulaValid(cedula)}
+            aria-describedby="cedula-help"
+            pattern="^\d{7,10}$"
+            title="Ingrese solo números, entre 7 y 10 dígitos"
+          />
+          <p id="cedula-help" className="text-xs mt-1 text-gray-600">
+            Ingrese su cédula.
+          </p>
+          {cedulaTouched && !isCedulaValid(cedula) && (
+            <p className="text-xs mt-1 text-red-600">
+              Ingresa una cédula válida.
+            </p>
+          )}
         </div>
 
         <div className="mb-4 relative">
@@ -114,6 +192,7 @@ const Login: React.FC = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             disabled={isBlocked}
+            autoComplete="current-password"
           />
           <span
             onClick={() => setShowPassword(!showPassword)}
@@ -130,6 +209,7 @@ const Login: React.FC = () => {
             checked={acceptTerms}
             onChange={() => setAcceptTerms(!acceptTerms)}
             className="mr-2"
+            disabled={isBlocked}
           />
           <label htmlFor="terms" className="text-sm text-black">
             Acepto los términos y condiciones
@@ -138,10 +218,10 @@ const Login: React.FC = () => {
 
         <button
           type="submit"
-          disabled={!isLoginFormValid(username, password, acceptTerms) || isBlocked}
+          disabled={!isLoginFormValid(username, password, cedula, acceptTerms) || isBlocked}
           className={`w-full flex items-center justify-center text-black font-semibold py-2 rounded transition duration-300 shadow-md
             ${
-              isBlocked || !isLoginFormValid(username, password, acceptTerms)
+              isBlocked || !isLoginFormValid(username, password, cedula, acceptTerms)
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-[#F2C92F] hover:bg-[#e0b922] hover:shadow-lg"
             }`}

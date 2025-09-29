@@ -20,7 +20,7 @@ export const HeroCards = () => {
       {/* Misión y Visión */}
       <MissionVisionModal
         trigger={
-          <Card className="w-[90%] max-w-[340px] lg:absolute lg:w-[340px] lg:-top-[32px] lg:right-[325px] drop-shadow-xl shadow-black/10 dark:shadow-white/10 cursor-pointer hover:scale-[1.02] transition-transform duration-200">
+          <Card className="w-[90%] max-w-[340px] lg:absolute lg:w-[340px] lg:-top-[32px] lg:right-[330px] drop-shadow-xl shadow-black/10 dark:shadow-white/10 cursor-pointer hover:scale-[1.02] transition-transform duration-200">
             <CardHeader className="flex flex-row items-center gap-4 pb-2">
               <img
                 src={viacolLogo}
@@ -29,7 +29,7 @@ export const HeroCards = () => {
               />
               <div className="flex flex-col">
                 <CardTitle className="text-lg">Misión y visión</CardTitle>
-                <CardDescription>VIACOL S.A.S.</CardDescription>
+                <CardDescription>CIA VIACOL S.A.S.</CardDescription>
               </div>
             </CardHeader>
             <CardContent className="text-sm leading-snug">
@@ -40,13 +40,13 @@ export const HeroCards = () => {
       />
 
       {/* Código de ética */}
-      <Card className="w-[90%] max-w-[320px] lg:absolute lg:right-[20px] lg:-top-[8px] flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+      <Card className="w-[90%] max-w-[320px] lg:absolute lg:right-[-2px] lg:-top-[8px] flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader className="mt-2 flex justify-center items-center pb-2">
           <CardTitle className="text-center">
             Código de ética y comportamiento organizacional
           </CardTitle>
           <CardDescription className="font-normal text-[#F2C92F]">
-            CIA Viacol S.A.S.
+            CIA VIACOL S.A.S.
           </CardDescription>
         </CardHeader>
 
@@ -67,7 +67,7 @@ export const HeroCards = () => {
       </Card>
 
       {/* Valores corporativos */}
-      <Card className="w-[90%] max-w-[320px] lg:absolute lg:top-[128px] lg:left-[50px] drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+      <Card className="w-[90%] max-w-[320px] lg:absolute lg:top-[129px] lg:left-[50px] drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader>
           <CardTitle className="flex item-center justify-between">
             Valores corporativos
@@ -108,7 +108,7 @@ export const HeroCards = () => {
       {/* Enfoque estratégico */}
       <StrategicFocusModal
         trigger={
-          <Card className="w-[90%] max-w-[340px] lg:absolute lg:-right-[1px] lg:bottom-[3px] drop-shadow-xl shadow-black/10 dark:shadow-white/10 cursor-pointer hover:scale-[1.02] transition-transform duration-200">
+          <Card className="w-[90%] max-w-[340px] lg:absolute lg:-right-[22px] lg:bottom-[3px] drop-shadow-xl shadow-black/10 dark:shadow-white/10 cursor-pointer hover:scale-[1.02] transition-transform duration-200">
             <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
               <div className="">
                 <img

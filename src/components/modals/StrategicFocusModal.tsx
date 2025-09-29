@@ -43,12 +43,12 @@ export const StrategicFocusModal = ({ trigger }: StrategicFocusModalProps) => {
               Política de Calidad
             </DialogTitle>
             <DialogDescription className="mb-4">
-              Principios y compromisos de CIA Viacol S.A.S. con la excelencia educativa y la normativa vial.
+              Principios y compromisos de CIA VIACOL S.A.S. con la excelencia educativa y la normativa vial.
             </DialogDescription>
 
             <div className="space-y-3 text-sm leading-relaxed">
               <p>
-                En CIA Viacol S.A.S., estamos comprometidos con la prestación de servicios 
+                En CIA VIACOL S.A.S., estamos comprometidos con la prestación de servicios 
                 pedagógicos de formación en seguridad vial dirigidos a ciudadanos infractores, 
                 garantizando el cumplimiento de los requisitos legales y reglamentarios aplicables, así 
                 como las necesidades y expectativas de nuestros usuarios y partes interesadas. 
@@ -76,7 +76,7 @@ export const StrategicFocusModal = ({ trigger }: StrategicFocusModalProps) => {
           <div className="w-full flex justify-center mt-6">
             <img
               src={firma}
-              alt="Firma CIA Viacol"
+              alt="Firma CIA VIACOL S.A.S."
               className="max-w-[480px] w-full h-auto object-contain"
             />
           </div>

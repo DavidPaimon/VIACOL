@@ -34,7 +34,7 @@ const TermsOfUse: React.FC = () => {
         </h1>
 
         <p className="mb-4 text-justify leading-relaxed">
-          Estos Términos de Uso rigen su acceso y uso del sitio web de VIACOL. Al navegar o interactuar con nuestra plataforma, usted acepta estas condiciones.
+          Estos Términos de Uso rigen su acceso y uso del sitio web de CIA VIACOL S.A.S. Al navegar o interactuar con nuestra plataforma, usted acepta estas condiciones.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">1. Responsabilidad del usuario</h2>
@@ -44,7 +44,7 @@ const TermsOfUse: React.FC = () => {
 
         <h2 className="text-xl font-semibold mt-6 mb-2">2. Acceso y disponibilidad</h2>
         <p className="mb-4 text-justify">
-          El acceso a nuestro sitio puede estar sujeto a interrupciones por mantenimiento o causas técnicas. VIACOL no se hace responsable por cualquier indisponibilidad temporal del servicio.
+          El acceso a nuestro sitio puede estar sujeto a interrupciones por mantenimiento o causas técnicas. CIA VIACOL S.A.S. no se hace responsable por cualquier indisponibilidad temporal del servicio.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">3. Cambios al contenido</h2>

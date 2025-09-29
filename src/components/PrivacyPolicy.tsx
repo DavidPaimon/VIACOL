@@ -34,7 +34,7 @@ const PrivacyPolicy: React.FC = () => {
         </h1>
 
         <p className="mb-4 text-justify leading-relaxed">
-          En VIACOL nos tomamos en serio la privacidad de sus datos personales. Esta política describe cómo recopilamos, usamos y protegemos su información.
+          En CIA VIACOL S.A.S. nos tomamos en serio la privacidad de sus datos personales. Esta política describe cómo recopilamos, usamos y protegemos su información.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">1. Recopilación de datos</h2>
